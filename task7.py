@@ -6,3 +6,13 @@
 # Первый словарь: {'a': 100, 'b': 200, 'c':300}
 # Второй словарь: {'a': 300, 'b': 200, 'd':400}
 # Результат: {'a': 400, 'b': 400, 'd': 400, 'c': 300}
+x1 = {'a': 100, 'b': 200, 'c': 300}
+x2 = {'a': 300, 'b': 200, 'd': 400}
+keys2 = list(x2.keys())
+my_dict = x1
+for i in range(len(keys2)):
+    try:
+        my_dict[keys2[i]] += x2.get(keys2[i], 0)
+    except:
+        my_dict[keys2[i]] = x2.get(keys2[i], 0)
+print(my_dict)
